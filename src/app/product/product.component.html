@@ -1,0 +1,44 @@
+<!--component html goes here -->
+
+<div class="panel panel-primary">
+    <!-- Default panel contents -->
+    <div class="panel-heading header-name">{{pageTitle}}</div>
+    <div class="panel-body">
+        <div>
+            <button (click)="visibility()" class="btn btn-primary">{{visible?'Show':'Hide'}} Records</button>&nbsp;&nbsp;&nbsp;
+            <span class="filtertext">Search Text : {{listFilter}}</span>
+            <form class="navbar-form navbar-left" role="search" (ngSubmit)="fetchRecord(data)">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="listFilter" name="listFilter" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <table class="table table-bordered ">
+            <tr>
+                <th>Sno</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Photo</th>
+                <th>Rating</th>
+                <th>Status</th>
+            </tr>
+            <tbody *ngIf="visible">
+                <tr *ngFor="let product of productList | customerFilter:listFilter">
+                    <th>{{product.sno}}</th>
+                    <td>{{product.first_name}}</td>
+                    <td>{{product.last_name}}</td>
+                    <td>{{product.email}}</td>
+                    <td>{{product.phone}}</td>
+                    <td><img [src]="product.image" [title]="product.first_name" [style.width.px]="imgWidth" [style.margin.px]="marginPx"></td>
+                    <td>
+                        <app-star [rating]="product.rating" (ratingClicked)="onRatingClicked($event)"></app-star>
+                    </td>
+                    <td>{{product.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

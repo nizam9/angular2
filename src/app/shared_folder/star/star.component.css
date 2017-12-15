@@ -1,0 +1,9 @@
+/* component css goes here */
+
+.crop {
+    overflow: hidden;
+}
+
+div {
+    cursor: pointer;
+}

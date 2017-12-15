@@ -1,0 +1,19 @@
+ /* component css goes here */
+ 
+ .header-name {
+     font-size: 26px;
+ }
+ 
+ form {
+     float: right !important;
+ }
+ 
+ table tr {
+     text-align: center;
+ }
+ 
+ .filtertext {
+     font-size: 15px;
+     font-family: sans-serif;
+     color: red
+ }

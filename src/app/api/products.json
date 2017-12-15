@@ -1,0 +1,31 @@
+[{
+        "sno": 1,
+        "first_name": "nizam",
+        "last_name": "shaik",
+        "email": "nizam@gmail.com",
+        "phone": 8985977465,
+        "image": "http://www.qygjxz.com/data/out/190/5691490-profile-pictures.png",
+        "rating": 2.5,
+        "status": "Active"
+    },
+    {
+        "sno": 2,
+        "first_name": "wasim",
+        "last_name": "shariff",
+        "email": "wasim@gmail.com",
+        "phone": 9999665658,
+        "image": "http://www.qygjxz.com/data/out/190/5691490-profile-pictures.png",
+        "rating": 3.6,
+        "status": "Inactive"
+    },
+    {
+        "sno": 3,
+        "first_name": "ram",
+        "last_name": "prasad",
+        "email": "ram@gmail.com",
+        "phone": 5566899968,
+        "image": "http://www.qygjxz.com/data/out/190/5691490-profile-pictures.png",
+        "rating": 5,
+        "status": "Active"
+    }
+]
