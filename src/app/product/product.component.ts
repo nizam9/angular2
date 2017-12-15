@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Icustomers } from "./product";
 import { ProductService } from "./product.service";
-// import { error } from "selenium-webdriver";
 @Component({
   selector: "app-product",
   moduleId: module.id,
