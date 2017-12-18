@@ -1,35 +1,24 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
-import { ProductComponent } from "./product/product.component";
-import { ProductFilterPipe } from "./product/product-filter.pipe";
-import { StarComponent } from "./shared_folder/star/star.component";
-import { ProductListComponent } from "./product/productList.component";
 import { WelcomeComponent } from "./product/welcome.component";
+import { ProductModule } from "./product/product.module";
+import { PageNotFoundComponent } from "./pageNotFoundComponent";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductComponent,
-    ProductFilterPipe,
-    ProductListComponent,
-    WelcomeComponent,
-    StarComponent
-  ],
+  declarations: [AppComponent, WelcomeComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
-    FormsModule,
+    ProductModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: "customers", component: ProductComponent },
-      { path: "customers/:id", component: ProductListComponent },
       { path: "welcome", component: WelcomeComponent },
       { path: "", redirectTo: "welcome", pathMatch: "full" },
-      { path: "**", redirectTo: "welcome", pathMatch: "full" }
+      { path: "page-not-found", component: PageNotFoundComponent },
+      { path: "**", redirectTo: "page-not-found", pathMatch: "full" }
     ])
   ],
   providers: [],

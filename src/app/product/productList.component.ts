@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
-
-
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute , Router } from "@angular/router";
 
 @Component({
-  template: "<h1>Customers Details</h1>",
+  moduleId: module.id,
+  templateUrl: "product-list-component.html"
 })
+export class ProductListComponent implements OnInit {
+    constructor(private _route: ActivatedRoute ,
+                private _router: Router) {}
+    value: string;
 
-export class ProductListComponent {
+    ngOnInit(): void {
+        const id = +this._route.snapshot.params['id'];
+        this.value = `${id}`;
+    }
+
+    onBack(): void {
+      this._router.navigate(['/customers']);
+    }
 
 }

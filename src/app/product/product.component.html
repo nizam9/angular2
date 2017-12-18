@@ -28,7 +28,9 @@
             <tbody *ngIf="visible">
                 <tr *ngFor="let product of productList | customerFilter:listFilter">
                     <th>{{product.sno}}</th>
-                    <td>{{product.first_name}}</td>
+                    <td>
+                        <a [routerLink]="['/customer',product.sno]">{{product.first_name}}</a>
+                    </td>
                     <td>{{product.last_name}}</td>
                     <td>{{product.email}}</td>
                     <td>{{product.phone}}</td>
